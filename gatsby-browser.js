@@ -7,7 +7,7 @@ import './styles/config/print.css'
 import $ from 'jquery';
 import 'jquery.scrollto';
 
-export const onClientEntry = () => {
+export function onClientEntry(){
   if (!window.location.hash) {
     window.scrollTo(0, 0);
   } else {
@@ -19,3 +19,12 @@ export const onClientEntry = () => {
     }, 1000)
   }
 }
+// Scroll to top of page if user revisits page
+export function shouldUpdateScroll({ routerProps: { location } }) {
+  const { pathname } = location;
+  if (pathname && !window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+  return false;
+}
+
