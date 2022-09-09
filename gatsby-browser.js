@@ -3,6 +3,7 @@ import 'jquery/dist/jquery.min';
 import 'popper.js/dist/popper.min';
 import 'bootstrap/dist/js/bootstrap.min';
 import './styles/config/print.css'
+import './styles/styles.scss';
 
 import $ from 'jquery';
 import 'jquery.scrollto';

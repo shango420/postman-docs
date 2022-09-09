@@ -7,11 +7,12 @@
 
 import React from 'react';
 import Header from './Header/Header';
-import Footer from './Footer/Footer';
+import FooterComponent from './Footer/Footer';
 import marketo from '../../build/marketo.munchkin';
 import '../../styles/config/normalize.css';
 import GlobalStyle  from '../../styles/globalStyle.js';
 import Theme from '../../styles/theme.jsx';
+import '../../styles/styles.scss';
 
 const getCookie = (name) => {
   const value = `; ${document.cookie}`;
@@ -90,11 +91,11 @@ class Layout extends React.Component {
         <main>
           <GlobalStyle />
           <Theme>
-          <Header />
-          {children}
-          <Footer />
-          {marketo()}
-        </Theme>
+            <Header />
+            {children}
+            <FooterComponent />
+            {marketo()}
+          </Theme>
         </main>
       </>
     );
