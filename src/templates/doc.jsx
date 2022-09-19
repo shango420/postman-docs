@@ -12,7 +12,6 @@ const { v4: uuidv4 } = require('uuid');
 import { ButtonStyles } from '../../styles/ButtonStyles'
 import styled from 'styled-components';
 import 'prismjs/themes/prism-tomorrow.css';
-import { useModal } from '../components/modules/Modal';
 import PreviousAndNextLinks from '../components/modules/PreviousAndNextLinks';
 import BreadCrumbsLinks from '../components/modules/BreadCrumbsLinks';
 import LoadQualtrics from '../components/modules/loadQualtrics';
@@ -290,7 +289,7 @@ const RightColumnWrapper = styled.aside`
 `
 
 const DocPage = ({ data }) => {
-  const [modalData] = useState(data.markdownRemark)
+
   const post = data.markdownRemark;
   // Last modified date - bottom
   // Last modified time - top 
@@ -310,20 +309,6 @@ const DocPage = ({ data }) => {
       doc.frontmatter.contextual_links && <ContextualLinks key={uuidv4()} links={doc.frontmatter.contextual_links} />
     )
   }
-  // updates HTML to enable clickable images to display modal
-( function ModifyHTML() {
-    useEffect(() => {
-      const parser = new DOMParser();
-      const parsedHTML = parser.parseFromString(modalData.html, 'text/html');
-      // allows images to display as modal when clicked
-      useModal(parsedHTML);
-      document.getElementById("LoadDoc").innerHTML = parsedHTML.body.innerHTML;   
-    }, []);
-
-    return (
-      null
-    );
-  })()
   return (
     <Layout>
       <SEO title={post.frontmatter.title} slug={post.fields.slug} lastModifiedTime={lastModifiedTime} />
@@ -337,7 +322,7 @@ const DocPage = ({ data }) => {
               <main className="col-sm-12 col-md-12 col-lg-9 offset-lg-0 col-xl-7 doc-page ml-xl-5">
                 <BreadCrumbsLinks data={{ parentLink, subParentLink }} />
                 <h1>{post.frontmatter.title}</h1>
-                <div id="LoadDoc" />
+                <span dangerouslySetInnerHTML={{ __html: post.html }} />
                 {
                   excerptCount ?
                     <div className='events__alert mb-3'>
