@@ -4,7 +4,7 @@ page_id: "variables_list"
 updated: 2020-09-04
 order: 46
 contextual_links:
-  - type: section
+  - type: sectionvg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20baseProfile%3D%22full%22%20width%3D%22undefined%22%20height%3D%22undefined%22%3E%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20f
     name: "Additional Resources"
   - type: subtitle
     name: "Videos"
