@@ -283,11 +283,11 @@ class IndexPage extends React.Component {
                 </div>
                 <div className="col-sm-6 col-lg-4 mb-3 mb-md-4 pr-md-5">
                   <LandingCard
-                    title="Postman Space Camp"
-                    description="See previous and upcoming educational webinars."
-                    cta="See webinars"
-                    link="https://www.postman.com/events/postman-space-camp/"
-                    icon="https://voyager.postman.com/icon/camp-tent-icon-postman.svg"
+                    title="Postman Intergalactic"
+                    description="A series of educational trainings taught by Postman team members with a live Q&A."
+                    cta="See upcoming webinars"
+                    link="https://www.postman.com/events/intergalactic/"
+                    icon="https://voyager.postman.com/icon/product-ufo-icon-postman.svg"
                   />
                 </div>
                 <div className="col-sm-6 col-lg-4 mb-3 mb-md-4 pr-md-5">
